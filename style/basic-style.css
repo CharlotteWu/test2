@@ -62,9 +62,10 @@ input, select {
 }
    
 .music{
-    width: 54px;
-    height: 54px;
+    width: 36px;
+    height: 36px;
     background: url(../imgs/units-icons.jpg) center no-repeat;
+    background-size: 100%;
     position: absolute;
     right: 5px;
     top: 20px;

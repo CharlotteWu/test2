@@ -41,25 +41,21 @@ function onPageChanged(index){
 
 
 var pageSlider;
-$(document).ready(function(){
+ 
 	var query=GetRequest(); 
 	var dynamicID=query['id'];//获取动态场景ID
 	/*
 		通过Ajax读取json数据包
-	*/
-
-	/*$('.animationItem').each(function(){
-    $(this).data('animation',$(this).css('animation-name'));
-    $(this).css('animation-name',null);
-
-  })*/ 
+	*/ 
  
-pageSlider = PageSlider.case({
+pageSlider = PageSlider.case({ 
 			duration:350,
-			elastic:false,
+			elastic:false, 
 			callback:onPageChanged ,
 			pageSwiching:function(){ $('#box').addClass('stopAnimation')},
 			pageSwichCancel:function(){ $('#box').removeClass('stopAnimation')}
 		}
-	); 	
-})
+	); 
+
+ 
+ 

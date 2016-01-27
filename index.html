@@ -4,10 +4,11 @@
 	<title>{{screens.Title}}</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" > 
-    <link rel="stylesheet" type="text/css" href="style/animation/animation-keyframes.css?v=1">
+    <link rel="stylesheet" type="text/css" href="style/animation/animation-keyframes.css">
     <link rel="stylesheet" type="text/css" href="style/animation/animation.css">
     <link rel="stylesheet" type="text/css" href="style/basic-style.css"> 
-    <link rel="stylesheet" type="text/css" href="style/pageSlider.css?v=1"> 
+    <link rel="stylesheet" type="text/css" href="style/pageSlider.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css"><!--extra css file-->
     <script type="text/javascript" src="scripts/vue.min.js"></script>   
 </head>
 <body> 
@@ -26,15 +27,15 @@
 
     <!--screen template-->
     <script type="text/x-template" id="screen-template">
-    	<div v-for="page in pages" class="section sec{{$index+1}}"  :style="{'background-image': 'url(' + page.BackgroundImage.Src  + ')' }">
-			<template v-for="detail in page.Elements">
-				<word :detail="detail" v-if="detail.Type == 1"></word> 
-				<picture :detail="detail" v-if="detail.Type == 2"></picture>	
-				<press :detail="detail" v-if="detail.Type == 3"></press>
+   <div v-for="page in pages" class="section sec{{$index+1}}"  :style="{'background-image': 'url(' + page.BackgroundImage.Src  + ')' }">
+            <template v-for="detail in page.Elements">
+                <word :detail="detail" v-if="detail.Type == 1"></word> 
+                <picture :detail="detail" v-if="detail.Type == 2"></picture>    
+                <press :detail="detail" v-if="detail.Type == 3"></press>
                 <lottery :detail="detail" v-if="detail.Type == 4"></lottery> 
-                <lottery-plate :detail="detail" v-if="detail.Type == 5"></lottery-plate> 		
-			</template> 
-    	</div>
+                <lottery-plate :detail="detail" v-if="detail.Type == 5"></lottery-plate>        
+            </template> 
+        </div>
     </script>
  
     <!--word template-->
@@ -120,12 +121,12 @@
     </script>
 
 	<!--<link rel="stylesheet" type="text/css" v-for="css in screens.ExtendCss" href="{{css}}" /> -->
-    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    
 
 </body> 
 <script type="text/javascript" src="scripts/component.js"></script>  
 <script type="text/javascript" src="scripts/zepto.js"></script>
-<script type="text/javascript" src="scripts/pageSlider.js?v=2"></script>
+<script type="text/javascript" src="scripts/pageSlider.js"></script>
 <script type="text/javascript" src="scripts/vue-script.js"></script> 
 <script type="text/javascript" src="scripts/z-script.js"></script>
 
