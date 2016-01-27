@@ -189,7 +189,7 @@ var screens=
                   IsDisplay:'block',
                   Location:
                   {
-                    X:79,
+                    X:75,
                     Y:0,
                     Z:100  
                   },
