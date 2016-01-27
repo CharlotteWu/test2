@@ -604,7 +604,7 @@ var screens=
                   IsDisplay:'block',
                   Location:
                   {
-                    X:78,
+                    X:80,
                     Y:0,
                     Z:100  
                   },
