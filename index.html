@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html id="box">
+<head>
+	<title>{{screens.Title}}</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" > 
+    <link rel="stylesheet" type="text/css" href="style/animation/animation-keyframes.css?v=1">
+    <link rel="stylesheet" type="text/css" href="style/animation/animation.css">
+    <link rel="stylesheet" type="text/css" href="style/basic-style.css"> 
+    <link rel="stylesheet" type="text/css" href="style/pageSlider.css?v=1"> 
+    <script type="text/javascript" src="scripts/vue.min.js"></script>   
+</head>
+<body> 
+
+<!--root start from here-->
+    <div class="showPage" >  
+		<span class="music" :style="{display: screens.BackgroundMusic.IsShowLogo}">
+            <audio   
+                :src="screens.BackgroundMusic.Src" 
+                loop="{{ screens.BackgroundMusic.IsLoop }}" 
+                autoplay="{{ screens.BackgroundMusic.IsAutoStart }}" > 
+            </audio>
+        </span> 
+            <screen :pages="pages"></screen>  
+    </div> 
+
+    <!--screen template-->
+    <script type="text/x-template" id="screen-template">
+    	<div v-for="page in pages" class="section sec{{$index+1}}"  :style="{'background-image': 'url(' + page.BackgroundImage.Src  + ')' }">
+			<template v-for="detail in page.Elements">
+				<word :detail="detail" v-if="detail.Type == 1"></word> 
+				<picture :detail="detail" v-if="detail.Type == 2"></picture>	
+				<press :detail="detail" v-if="detail.Type == 3"></press>
+                <lottery :detail="detail" v-if="detail.Type == 4"></lottery> 
+                <lottery-plate :detail="detail" v-if="detail.Type == 5"></lottery-plate> 		
+			</template> 
+    	</div>
+    </script>
+ 
+    <!--word template-->
+    <script type="text/x-template" id="word-template">
+    	<span 
+    	class="animationItem"  
+        data-animation="{{ detail.Animation.Name }}"
+        :style="{top: detail.Location.X + '%' ,
+                left: detail.Location.Y + '%' ,  
+                'animation-duration':detail.Animation.Speed,
+                'animation-delay':detail.Animation.Delay,  
+                'z-index':detail.Location.Z 
+                }">
+        	{{ detail.Content }}
+        </span> 
+    </script> 
+
+    <!--image template-->
+    <script type="text/x-tempalte" id="image-template">
+    	<img
+        class="animationItem"  
+        data-animation="{{ detail.Animation.Name }}"  
+        :style="{top: detail.Location.X + '%' ,
+                left: detail.Location.Y + '%' ,  
+                'animation-duration':detail.Animation.Speed,
+                'animation-delay':detail.Animation.Delay,  
+                'z-index':detail.Location.Z 
+                }"
+    	:src="detail.Src">
+    </script>
+
+    <!--button style template-->
+    <script type="text/x-template" id="press-template">
+        <a
+        href="{{ detail.Link }}">
+            <button>
+            {{ detail.Content }}
+            </button>
+        </a> 
+    </script> 
+
+    <!--lottery template-->
+    <script type="text/x-template" id="lottery-template">
+      <div
+        class="lottery"
+        :style="{
+            top: detail.Location.X + '%',
+            left:detail.Location.Y + '%',
+            'z-index':detail.Location.Z
+            }">
+          <ul>
+            <li class="gift-cover gift0">1</li>
+            <li class="gift-cover gift1">2</li>
+            <li class="gift-cover gift2">3</li>
+
+            <li class="gift-cover gift7">8</li>
+            <li><button @touchend="startSpin">start</button></li>
+            <li class="gift-cover gift3">4</li>
+
+            <li class="gift-cover gift6">7</li>
+            <li class="gift-cover gift5">6</li>
+            <li class="gift-cover gift4">5</li>
+        </ul>
+        <div class="mask"></div>
+      </div> 
+    </script>
+
+    <!--lottery-plate template-->
+    <script type="text/x-template" id="lottery-plate-template">
+      <div
+       class="lottery-plate"
+       :style="{
+            top: detail.Location.X + '%',
+            left:detail.Location.Y + '%',
+            'z-index':detail.Location.Z
+            }">
+         <div class="plate" >
+             
+         </div> 
+         <div class="pointer" @touchend="startRun"></div> 
+          <div class="mask"></div>
+      </div>  
+    </script>
+
+	<!--<link rel="stylesheet" type="text/css" v-for="css in screens.ExtendCss" href="{{css}}" /> -->
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+
+</body> 
+<script type="text/javascript" src="scripts/component.js"></script>  
+<script type="text/javascript" src="scripts/zepto.js"></script>
+<script type="text/javascript" src="scripts/pageSlider.js?v=2"></script>
+<script type="text/javascript" src="scripts/vue-script.js"></script> 
+<script type="text/javascript" src="scripts/z-script.js"></script>
+
+</html>

@@ -1,0 +1,17 @@
+@keyframes img1-4{
+	from{
+		transform: scale(0) rotate(0deg);
+	}
+	to{
+		transform: scale(1) rotate(360deg);
+	}
+}
+
+@-webkit-keyframes img1-4{
+	from{
+		-webkit-transform: scale(0) rotate(0deg);
+	}
+	to{
+		-webkit-transform: scale(1) rotate(360deg);
+	}
+}
