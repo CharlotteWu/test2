@@ -189,7 +189,7 @@ var screens=
                   IsDisplay:'block',
                   Location:
                   {
-                    X:78.5,
+                    X:81,
                     Y:0,
                     Z:100  
                   },
@@ -309,7 +309,7 @@ var screens=
                   IsDisplay:'block',
                   Location:
                   {
-                    X:78.8,
+                    X:81,
                     Y:0,
                     Z:100  
                   },
@@ -448,7 +448,7 @@ var screens=
                   IsDisplay:'block',
                   Location:
                   {
-                    X:77.5,
+                    X:79,
                     Y:0,
                     Z:100  
                   },
@@ -604,7 +604,7 @@ var screens=
                   IsDisplay:'block',
                   Location:
                   {
-                    X:81,
+                    X:82,
                     Y:0,
                     Z:100  
                   },

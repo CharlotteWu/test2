@@ -66,12 +66,13 @@ input, select {
     height: 36px;
     background: url(../imgs/units-icons.jpg) center no-repeat;
     background-size: 100%;
-    position: absolute;
+    position: fixed;
     right: 5px;
     top: 20px;
     -webkit-animation: rotate 10s infinite;
     animation: rotate 10s infinite;
     z-index: 999;
+    visibility: visible;
 } 
 
 .section{ 

@@ -32,7 +32,7 @@ function onPageChanged(index){
 		var ani=$(this).data('animation');
 		$(this).css('animation-play-state','');
 		$(this).css('animation-name',ani);
-		$(this).css('visibility','visible')
+		$(this).css('visibility','visible');
 		$(this).css('-webkit-animation-play-state','')
 		$(this).css('-webkit-animation-name',ani);
 		
@@ -57,6 +57,20 @@ pageSlider = PageSlider.case({
 			pageSwichCancel:function(){ $('#box').removeClass('stopAnimation')}
 		}
 	); 
+
+$('.music').on('touchend',function(){
+	 if($('.music').hasClass('play')){
+	 	$('.music').removeClass('play').addClass('stop');
+	 	$('.music').css('animation-play-state','paused');
+	 	$('.music').css('-webkit-animation-play-state','paused');
+	 	$('.music audio')[0].pause();
+	 }else{
+	 	$('.music').removeClass('stop').addClass('play');
+	 	$('.music').css('animation-play-state','');
+	 	$('.music').css('-webkit-animation-play-state','');
+	 	$('.music audio')[0].play();
+	 }
+});
 
  
  
