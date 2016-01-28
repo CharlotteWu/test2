@@ -32,6 +32,7 @@ function onPageChanged(index){
 		var ani=$(this).data('animation');
 		$(this).css('animation-play-state','');
 		$(this).css('animation-name',ani);
+		$(this).css('visibility','visible')
 		$(this).css('-webkit-animation-play-state','')
 		$(this).css('-webkit-animation-name',ani);
 		

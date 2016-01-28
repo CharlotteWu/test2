@@ -81,6 +81,7 @@ input, select {
 span,img,a{
     position: absolute;
     transform-origin: 50% 50%;
+    visibility: hidden; 
 }
 
 .lottery{
