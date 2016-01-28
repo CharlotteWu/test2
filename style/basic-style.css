@@ -72,9 +72,7 @@ input, select {
     -webkit-animation: rotate 10s infinite;
     animation: rotate 10s infinite;
     z-index: 999;
-}
-
- 
+} 
 
 .section{ 
     background-size: 100% 100%;
