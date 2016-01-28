@@ -53,8 +53,16 @@ pageSlider = PageSlider.case({
 			duration:350,
 			elastic:false, 
 			callback:onPageChanged ,
-			pageSwiching:function(){ $('#box').addClass('stopAnimation')},
-			pageSwichCancel:function(){ $('#box').removeClass('stopAnimation')}
+			pageSwiching:function(e){ 
+				var e = window.event || event;
+				e.preventDefault();
+				$('#box').addClass('stopAnimation')
+			},
+			pageSwichCancel:function(e){ 
+				var e = window.event || event;
+				e.preventDefault();
+				$('#box').removeClass('stopAnimation')
+			}
 		}
 	); 
 
