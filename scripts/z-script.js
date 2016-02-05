@@ -40,6 +40,10 @@ function onPageChanged(index){
     
 }
 
+/*-------------------first load the dom you want -----------------------*/
+function firstLoad(){
+
+}
 
 var pageSlider;
  
@@ -65,6 +69,8 @@ pageSlider = PageSlider.case({
 			}
 		}
 	); 
+
+pageSlider.go(1);
 
 $('.music').on('touchend',function(){
 	 if($('.music').hasClass('play')){
