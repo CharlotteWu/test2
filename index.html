@@ -56,15 +56,15 @@
     <!--image template-->
     <script type="text/x-tempalte" id="image-template">
     	<img
-        class="animationItem"  
-        data-animation="{{ detail.Animation.Name }}"  
+        class="animationItem img"  
+        data-animation="{{ detail.Animation.Name }}" 
+        data-image="{{ detail.Src }}" 
         :style="{top: detail.Location.X + '%' ,
                 left: detail.Location.Y + '%' ,  
                 'animation-duration':detail.Animation.Speed,
                 'animation-delay':detail.Animation.Delay,  
                 'z-index':detail.Location.Z 
-                }"
-    	:src="detail.Src">
+                }">
     </script>
 
     <!--button style template-->
