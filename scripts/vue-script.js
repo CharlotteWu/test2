@@ -42,7 +42,7 @@ var screens=
               {  //图片元素
                   Type:2,
                   ID:"",
-                  Src:"imgs/0-5.png",
+                  Src:"imgs/0-2.png",
                   IsDisplay:'block',
                   Location:
                   {

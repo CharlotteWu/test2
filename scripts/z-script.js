@@ -48,23 +48,9 @@ function onPageChanged(index){
 */
 
 function firstLoad(index){ 
-	$('.sec' + index + ' .img').each(function (){ 
-
+	$('.sec' + index + ' .img').each(function (){  
 		var image = $(this).data('image');
-
-		$.ajax({   
-			type:"GET",
-			data:image, 
-			success:function(data) { 
-				alert("haha");
-				$(this).attr('src',image); 
-			},
-			error:function(data) {
-				alert(data);
-				$(this).attr('src','imgs/404.jpg');
-			}  
-		}); 
-
+		$(this).attr('src',image); 
 	}); 
 } 
 
