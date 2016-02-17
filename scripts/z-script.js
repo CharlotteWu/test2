@@ -61,12 +61,18 @@ function firstLoad(index){
     	$(this).on('error',function(){
     		$(this).attr('src','imgs/404.jpg');
     		count--;
-    	})   
-	}); 
+    	})
 
-	if(count == 0){
-		 onPageChanged(index);
-	}   
+    	if(count == 0){
+		  $(this).on('load',function(){
+		  	onPageChanged(index);
+		  });
+		} 
+
+	}); 
+    
+     
+	   
 
 } 
 
