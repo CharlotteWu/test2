@@ -47,24 +47,27 @@ function onPageChanged(index){
 有则加载 反之则加载404图片
 */
 
-function firstLoad(index){ 
-	$('.sec' + index + ' .img').each(function (){  
-		var image = $(this).data('image');
-
-		$.ajax({   
-			type:"GET",  
-			success:function() {    
-				$(this).attr('src',image); 
-				alert(image);
-			},
-			error:function() { 
-				$(this).attr('src','imgs/404.jpg');
-				alert('hhaa');
-			} 
-		}); 
+function firstLoad(index){  
+    var count= $('.sec' + index + ' .img').length;  
 
 
+    $('.sec' + index + ' .img').each(function (){
+    	var image = $(this).data('image');
+
+    	 
+    		$(this).attr('src',image);
+    		count--; 
+
+    	$(this).on('error',function(){
+    		$(this).attr('src','imgs/404.jpg');
+    		count--;
+    	})  
+
+    	if(count == 0){
+		 onPageChanged(index);
+		}    
 	}); 
+
 } 
 
 /*all callback function in here*/
@@ -86,7 +89,7 @@ var dynamicID=query['id'];//获取动态场景ID
 pageSlider = PageSlider.case({ 
 			duration:350,
 			elastic:false, 
-			callback:everyPage,
+			callback:firstLoad,
 			pageSwiching:function(e){ 
 				var e = window.event || event;
 				e.preventDefault();
