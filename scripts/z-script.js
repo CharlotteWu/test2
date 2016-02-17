@@ -55,28 +55,22 @@ function firstLoad(index){
     	var image = $(this).data('image');
 
     	 
-    		$(this).attr('src',image);
-    		count--; 
+    	$(this).attr('src',image);
+    	count--; 
 
     	$(this).on('error',function(){
     		$(this).attr('src','imgs/404.jpg');
     		count--;
-    	})  
-
-    	if(count == 0){
-		 onPageChanged(index);
-		}    
+    	})   
 	}); 
+
+	if(count == 0){
+		 onPageChanged(index);
+	}   
 
 } 
 
-/*all callback function in here*/
-function everyPage(index){
-	firstLoad(index);
-	onPageChanged(index);
-	 
-}
-/*-----------------------------*/
+ 
 
 var pageSlider;
  
